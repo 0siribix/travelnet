@@ -17,6 +17,7 @@ local function on_interact(pos, _, player)
 	end
 
 	local player_name = player:get_player_name()
+	if minetest.is_protected(pos, player_name) and minetest.is_protected(pos, "PublicTP") then return end
 	travelnet.show_current_formspec(pos, meta, player_name)
 end
 
